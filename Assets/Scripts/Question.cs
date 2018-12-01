@@ -25,7 +25,7 @@ public class Impact
 public class Answer
 {
     public string answer;
-    public Impact[] impacts;
+    public List<Impact> impacts;
 }
 
 [CreateAssetMenu(fileName = "New Question", menuName = "Question")]

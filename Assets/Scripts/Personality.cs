@@ -5,21 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Personality", menuName = "Personality")]
 public class Personality : ScriptableObject
 {
-    private int satisfaction = 50;
+    [HideInInspector]
+    public int satisfaction = 50;
     public string nickname;
     public GameObject visual;
     [Range(0, 100)]
-    public int pride = 50;
+    public int lustChastity = 50;
     [Range(0, 100)]
-    public int greed = 50;
+    public int gluttonyTemperance = 50;
     [Range(0, 100)]
-    public int lust = 50;
+    public int greedCharity = 50;
     [Range(0, 100)]
-    public int envy = 50;
+    public int slothDiligence = 50;
     [Range(0, 100)]
-    public int glouttony = 50;
+    public int wrathPatience = 50;
     [Range(0, 100)]
-    public int wrath = 50;
+    public int envyKindness = 50;
     [Range(0, 100)]
-    public int sloth = 50;
+    public int prideHumility = 50;
 }
