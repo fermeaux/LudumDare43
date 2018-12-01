@@ -8,7 +8,7 @@ public class Personality : ScriptableObject
     [HideInInspector]
     public int satisfaction = 50;
     public string nickname;
-    public GameObject visual;
+    public Sprite visual;
     [Range(0, 100)]
     public int lustChastity = 50;
     [Range(0, 100)]

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0717cccb54aed8a4a91846414aa77cbb, type: 3}
+  m_Name: Dog
+  m_EditorClassIdentifier: 
+  satisfaction: 50
+  nickname: Dog
+  visual: {fileID: 21300030, guid: d450fa736dfbc0d41969d44ebe991aa9, type: 3}
+  lustChastity: 50
+  gluttonyTemperance: 50
+  greedCharity: 50
+  slothDiligence: 50
+  wrathPatience: 50
+  envyKindness: 50
+  prideHumility: 50

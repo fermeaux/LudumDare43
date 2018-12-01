@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   questions:
-  - {fileID: 11400000, guid: 3f3b567fe08b14f43bea536b9c5231c0, type: 2}
+  - {fileID: 11400000, guid: 91977164bf4fd244bb4eb95d8b0eb02e, type: 2}
+  - {fileID: 11400000, guid: 133e0c4947720674da0b47862260dfc4, type: 2}
   personalities:
-  - {fileID: 11400000, guid: 3787295c5776ece419a048f58a0a256c, type: 2}
+  - {fileID: 11400000, guid: 9f43758089154d54b840fb0da433a168, type: 2}
+  - {fileID: 11400000, guid: e8d052e4599514143aa2c636a909286e, type: 2}
+  - {fileID: 11400000, guid: 64323522caff7664394693b13bab4655, type: 2}
+  - {fileID: 11400000, guid: 8091dd8a043f0fb4a92df67acf754fdb, type: 2}
   satisfactionLimit: 100
   satisfactionMultiplier: 1.5

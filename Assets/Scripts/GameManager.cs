@@ -3,21 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public GameSettings settings;
+    public int satisfactionLimit = 100;
+    public float satisfactionMultiplier = 1.5f;
     [Header("References")]
     public Text questionText;
     public Image answerLeftImage;
     public Image answerRightImage;
     public Text answerLeftText;
     public Text answerRightText;
-    public List<Transform> personalitiesSpawn;
+    public List<Image> personalitiesSpawn;
 
-    private List<Personality> personalities;
+    private List<Question> questionsAvailable;
+    private List<Personality> personalitiesAvailable;
     private Question currentQuestion;
+    private List<Personality> personalities;
+    private List<Question> seenQuestions = new List<Question>();
+    private List<Personality> seenPersonalities = new List<Personality>();
+
+    public void Awake()
+    {
+        Random.InitState(System.DateTime.Now.Millisecond);
+    }
 
     public void Start()
     {
+        personalitiesAvailable = new List<Personality>(settings.personalities);
+        questionsAvailable = new List<Question>(settings.questions);
         LaunchGame();
     }
 
@@ -39,11 +53,20 @@ public class GameManager : MonoBehaviour {
             answerLeftImage.gameObject.SetActive(false);
             answerRightImage.gameObject.SetActive(true);
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (pos.x < Screen.width / 4)
+            {
+                SelectLeftAnswer();
+            } else if (pos.x > Screen.width * 3 / 4)
+            {
+                SelectRightAnswer();
+            }
+        }
     }
 
     public void LaunchGame()
     {
-        settings.Reset();
         SelectPersonalities();
         SelectNextQuestion();
     }
@@ -85,15 +108,16 @@ public class GameManager : MonoBehaviour {
         personalities = new List<Personality>();
         for (int i = 0; i < 4; i++)
         {
-            Personality tmp = settings.PickPersonality();
+            Personality tmp = PickPersonality();
             personalities.Add(tmp);
-            Instantiate(tmp.visual, personalitiesSpawn[i]);
+            personalitiesSpawn[i].sprite = tmp.visual;
+            // Instantiate(tmp.visual, personalitiesSpawn[i]);
         }
     }
 
     private bool CheckWin()
     {
-        return personalities.TrueForAll(personality => personality.satisfaction >= settings.satisfactionLimit);
+        return personalities.TrueForAll(personality => personality.satisfaction >= satisfactionLimit);
     }
 
     private bool CheckLoose()
@@ -152,16 +176,48 @@ public class GameManager : MonoBehaviour {
         float result = personalityValue > 50 ? (impactValue - personalityValue) : (personalityValue < 50 ? (personalityValue - impactValue) : 0);
         if (result > 0)
         {
-            result *= settings.satisfactionMultiplier;
+            result *= satisfactionMultiplier;
         }
         return result;
     }
 
     private void SelectNextQuestion()
     {
-        currentQuestion = settings.PickQuestion();
+        currentQuestion = PickQuestion();
         questionText.text = currentQuestion.question;
         answerLeftText.text = currentQuestion.left.answer;
         answerRightText.text = currentQuestion.right.answer;
+    }
+
+    private Question PickQuestion()
+    {
+        if (questionsAvailable.Count == 0)
+        {
+            questionsAvailable.AddRange(seenQuestions);
+        }
+        int index = Random.Range(0, questionsAvailable.Count);
+        Question tmp = questionsAvailable[index];
+        questionsAvailable.RemoveAt(index);
+        seenQuestions.Add(tmp);
+        return tmp;
+    }
+
+    private Personality PickPersonality()
+    {
+        if (personalitiesAvailable.Count == 0)
+        {
+            personalitiesAvailable.AddRange(seenPersonalities);
+        }
+        int index = Random.Range(0, personalitiesAvailable.Count);
+        Personality tmp = personalitiesAvailable[index];
+        personalitiesAvailable.RemoveAt(index);
+        seenPersonalities.Add(tmp);
+        return tmp;
+    }
+
+    private void Reset()
+    {
+        questionsAvailable.AddRange(seenQuestions);
+        personalitiesAvailable.AddRange(seenPersonalities);
     }
 }

@@ -1,11 +1,23 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: d450fa736dfbc0d41969d44ebe991aa9
-=======
-guid: a29f4ccceb29a674b88d8a38b6528af0
->>>>>>> Stashed changes
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spritesheet_protagonist_personalities_0
+    21300002: spritesheet_protagonist_personalities_1
+    21300004: spritesheet_protagonist_personalities_2
+    21300006: spritesheet_protagonist_personalities_3
+    21300008: spritesheet_protagonist_personalities_4
+    21300010: spritesheet_protagonist_personalities_5
+    21300012: spritesheet_protagonist_personalities_6
+    21300014: spritesheet_protagonist_personalities_7
+    21300016: spritesheet_protagonist_personalities_8
+    21300018: spritesheet_protagonist_personalities_9
+    21300020: spritesheet_protagonist_personalities_10
+    21300022: spritesheet_protagonist_personalities_11
+    21300024: spritesheet_protagonist_personalities_12
+    21300026: spritesheet_protagonist_personalities_13
+    21300028: spritesheet_protagonist_personalities_14
+    21300030: spritesheet_protagonist_personalities_15
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,11 +52,11 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,17 +85,366 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2308
+        width: 86
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137617405ead24a42bd3a33db899feb7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 2310
+        width: 93
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ff25a07e22e244eb30a59584e6199e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1389
+        width: 1089
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145e53c29fe0d594d8856b6e59afc205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_3
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1550
+        width: 644
+        height: 766
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60521bb80756c1941a17c8f3ca907aa4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_4
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2221
+        width: 59
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fddb84b1b2f1e428a5419a95de104f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_5
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 2216
+        width: 63
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475b94c6423a5c340a01af7f3bbe102d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_6
+      rect:
+        serializedVersion: 2
+        x: 3171
+        y: 1493
+        width: 615
+        height: 758
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80712a0fec9a47e4b82ff2b6555c9866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 2114
+        width: 185
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f61e5b31637d25498999cf44d8a0373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1774
+        width: 526
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13db7340df5ff7c4daf669d345d04e06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1484
+        width: 101
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb81996c897cc94083c88e7189a2852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1393
+        width: 78
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27234f4d6c8e6f40bf11a2230d480ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 876
+        width: 240
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d340d3accf1619746b593f08f8bc5d59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_12
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1217
+        width: 107
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1f113122f02254983f95aa64ac01a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_13
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 0
+        width: 1061
+        height: 1304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112a3425328f5c8419bd45e7ecaae7be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_14
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 511
+        width: 921
+        height: 673
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba44b42f156d524fb0f3c826b69acda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_protagonist_personalities_15
+      rect:
+        serializedVersion: 2
+        x: 3129
+        y: 611
+        width: 657
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fca5b8c566c91e41b5610723d4f92db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< Updated upstream
-    spriteID: 59e16c25a7a04c241ad26a04af261dd1
-=======
-    spriteID: 3957070d380715e48b897341be8a87cf
->>>>>>> Stashed changes
+    spriteID: 4b1ce4c7c26227341882c605c59b80fc
     vertices: []
     indices: 
     edges: []

@@ -10,8 +10,8 @@ public class GameSettings : ScriptableObject
     public int satisfactionLimit = 100;
     public float satisfactionMultiplier = 1.5f;
 
-    private List<Question> seenQuestions;
-    private List<Personality> seenPersonalities;
+    private List<Question> seenQuestions = new List<Question>();
+    private List<Personality> seenPersonalities = new List<Personality>();
 
     public Question PickQuestion()
     {
@@ -23,6 +23,7 @@ public class GameSettings : ScriptableObject
         Question tmp = questions[index];
         questions.RemoveAt(index);
         seenQuestions.Add(tmp);
+        Debug.Log(questions);
         return tmp;
     }
 
@@ -41,7 +42,13 @@ public class GameSettings : ScriptableObject
 
     public void Reset()
     {
-        questions.AddRange(seenQuestions);
-        personalities.AddRange(seenPersonalities);
+        if (seenQuestions.Count > 0)
+        {
+            questions.AddRange(seenQuestions);
+        }
+        if (seenPersonalities.Count > 0)
+        {
+            personalities.AddRange(seenPersonalities);
+        }
     }
 }
