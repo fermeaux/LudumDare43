@@ -80,36 +80,46 @@ public class GameManager : MonoBehaviour {
     {
         personalities.ForEach(personality =>
         {
-            int impactValue = 0;
+            float impactValue = 0f;
             answer.impacts.ForEach(impact =>
             {
                 switch(impact.deadlySin)
                 {
                     case DeadlySin.LustChastity:
-                        impactValue += personality.lustChastity > 50 ? (impact.value - personality.lustChastity) : (personality.lustChastity - impact.value);
+                        impactValue += GetImpactValue(personality.lustChastity, impact.value);
                         break;
                     case DeadlySin.GluttonyTemperance:
-                        impactValue += personality.gluttonyTemperance > 50 ? (impact.value - personality.gluttonyTemperance) : (personality.gluttonyTemperance - impact.value);
+                        impactValue += GetImpactValue(personality.gluttonyTemperance, impact.value);
                         break;
                     case DeadlySin.GreedCharity:
-                        impactValue += personality.greedCharity > 50 ? (impact.value - personality.greedCharity) : (personality.greedCharity - impact.value);
+                        impactValue += GetImpactValue(personality.greedCharity, impact.value);
                         break;
                     case DeadlySin.SlothDiligence:
-                        impactValue += personality.slothDiligence > 50 ? (impact.value - personality.slothDiligence) : (personality.slothDiligence - impact.value);
+                        impactValue += GetImpactValue(personality.slothDiligence, impact.value);
                         break;
                     case DeadlySin.WrathPatience:
-                        impactValue += personality.wrathPatience > 50 ? (impact.value - personality.wrathPatience) : (personality.wrathPatience - impact.value);
+                        impactValue += GetImpactValue(personality.wrathPatience, impact.value);
                         break;
                     case DeadlySin.EnvyKindness:
-                        impactValue += personality.envyKindness > 50 ? (impact.value - personality.envyKindness) : (personality.envyKindness - impact.value);
+                        impactValue += GetImpactValue(personality.envyKindness, impact.value);
                         break;
                     case DeadlySin.PrideHumility:
-                        impactValue += personality.prideHumility > 50 ? (impact.value - personality.prideHumility) : (personality.prideHumility - impact.value);
+                        impactValue += GetImpactValue(personality.prideHumility, impact.value);
                         break;
                 }
             });
-            personality.satisfaction += impactValue;
+            personality.satisfaction += Mathf.CeilToInt(impactValue);
         });
+    }
+
+    private float GetImpactValue(int personalityValue, int impactValue)
+    {
+        float result = personalityValue > 50 ? (impactValue - personalityValue) : (personalityValue - impactValue);
+        if (result > 0)
+        {
+            result *= settings.satisfactionMultiplier;
+        }
+        return result;
     }
 
     private void SelectNextQuestion()
