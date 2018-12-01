@@ -6,7 +6,7 @@ using UnityEngine;
 public class Personality : ScriptableObject
 {
     private int satisfaction = 50;
-    public string name;
+    public string nickname;
     public GameObject visual;
     [Range(0, 100)]
     public int pride = 50;

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0717cccb54aed8a4a91846414aa77cbb, type: 3}
   m_Name: buzz
   m_EditorClassIdentifier: 
-  name: 
+  nickname: 
   visual: {fileID: 0}
   pride: 50
   greed: 50
