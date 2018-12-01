@@ -21,6 +21,26 @@ public class GameManager : MonoBehaviour {
         LaunchGame();
     }
 
+    public void Update()
+    {
+        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float a = Mathf.Min(Mathf.Abs(pos.x) / 4, 1);
+        if (pos.x < 0)
+        {
+            answerLeftImage.color = new Color(1, 1, 1, a);
+            answerLeftText.color = new Color(0, 0, 0, a);
+            answerLeftImage.gameObject.SetActive(true);
+            answerRightImage.gameObject.SetActive(false);
+        }
+        else
+        {
+            answerRightImage.color = new Color(1, 1, 1, a);
+            answerRightText.color = new Color(0, 0, 0, a);
+            answerLeftImage.gameObject.SetActive(false);
+            answerRightImage.gameObject.SetActive(true);
+        }
+    }
+
     public void LaunchGame()
     {
         settings.Reset();
