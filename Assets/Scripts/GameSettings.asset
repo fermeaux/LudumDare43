@@ -11,5 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b148d5317344cad47aead309b6b27ad7, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  questions: []
-  personalities: []
+  questions:
+  - {fileID: 11400000, guid: 3f3b567fe08b14f43bea536b9c5231c0, type: 2}
+  personalities:
+  - {fileID: 11400000, guid: 3787295c5776ece419a048f58a0a256c, type: 2}
+  satisfactionLimit: 100
+  satisfactionMultiplier: 1.5

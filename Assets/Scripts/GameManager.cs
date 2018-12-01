@@ -1,12 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public GameSettings settings;
+    [Header("References")]
+    public Text questionText;
+    public Image answerLeftImage;
+    public Image answerRightImage;
+    public Text answerLeftText;
+    public Text answerRightText;
+    public List<Transform> personalitiesSpawn;
 
     private List<Personality> personalities;
     private Question currentQuestion;
+
+    public void Start()
+    {
+        LaunchGame();
+    }
 
     public void LaunchGame()
     {
@@ -52,7 +65,9 @@ public class GameManager : MonoBehaviour {
         personalities = new List<Personality>();
         for (int i = 0; i < 4; i++)
         {
-            personalities.Add(settings.PickPersonality());
+            Personality tmp = settings.PickPersonality();
+            personalities.Add(tmp);
+            Instantiate(tmp.visual, personalitiesSpawn[i]);
         }
     }
 
@@ -114,7 +129,7 @@ public class GameManager : MonoBehaviour {
 
     private float GetImpactValue(int personalityValue, int impactValue)
     {
-        float result = personalityValue > 50 ? (impactValue - personalityValue) : (personalityValue - impactValue);
+        float result = personalityValue > 50 ? (impactValue - personalityValue) : (personalityValue < 50 ? (personalityValue - impactValue) : 0);
         if (result > 0)
         {
             result *= settings.satisfactionMultiplier;
@@ -125,6 +140,8 @@ public class GameManager : MonoBehaviour {
     private void SelectNextQuestion()
     {
         currentQuestion = settings.PickQuestion();
-        // Animate Next question
+        questionText.text = currentQuestion.question;
+        answerLeftText.text = currentQuestion.left.answer;
+        answerRightText.text = currentQuestion.right.answer;
     }
 }
