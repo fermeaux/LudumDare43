@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour {
 
     public void Update()
     {
-        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        float a = Mathf.Min(Mathf.Abs(pos.x) / 4, 1);
-        if (pos.x < 0)
+        Vector3 pos = Input.mousePosition;
+        float a = Mathf.Min(Mathf.Abs(Screen.width / 2 - pos.x), Screen.width / 4) / (Screen.width / 4);
+        if (pos.x < Screen.width / 2)
         {
             answerLeftImage.color = new Color(1, 1, 1, a);
             answerLeftText.color = new Color(0, 0, 0, a);
