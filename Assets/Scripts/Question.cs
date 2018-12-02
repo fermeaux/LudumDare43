@@ -24,12 +24,14 @@ public class Impact
 [System.Serializable]
 public class Answer
 {
+    [TextArea]
     public string answer;
     public List<Impact> impacts;
 }
 
 [CreateAssetMenu(fileName = "New Question", menuName = "Question")]
 public class Question : ScriptableObject {
+    [TextArea]
     public string question;
     public Answer left;
     public Answer right;

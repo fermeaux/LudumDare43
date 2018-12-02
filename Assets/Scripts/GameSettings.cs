@@ -16,7 +16,7 @@ public class GameSettings : ScriptableObject
     public List<Personality> personalities;
     public List<Sprite> satisfactionIndicators;
     public List<FeedbackEmoji> feedbackEmojis;
-    public int satisfactionLimit = 100;
+    public int satisfactionLimit = 1000;
     public float satisfactionMultiplier = 1.5f;
 
     private List<Question> seenQuestions = new List<Question>();

@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         Vector3 pos = Input.mousePosition;
-        float a = Mathf.Min(Mathf.Abs(Screen.width / 2 - pos.x), Screen.width / 4) / (Screen.width / 4);
+        float a = Mathf.Min(Mathf.Abs(Screen.width / 2 - pos.x), Screen.width / 3) / (Screen.width / 3);
         if (pos.x < Screen.width / 2)
         {
             answerLeftImage.color = new Color(1, 1, 1, a);
@@ -58,10 +58,10 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            if (pos.x < Screen.width / 4)
+            if (pos.x < Screen.width / 3)
             {
                 SelectLeftAnswer();
-            } else if (pos.x > Screen.width * 3 / 4)
+            } else if (pos.x > Screen.width * 2 / 3)
             {
                 SelectRightAnswer();
             }
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
             Personality tmp = PickPersonality();
             personalities.Add(tmp);
             personalitiesSpawn[i].sprite = tmp.visual;
+            personalities[i].satisfaction = settings.satisfactionLimit / 2;
         }
         UpdateSatisfactionIndicators();
     }
@@ -170,6 +171,7 @@ public class GameManager : MonoBehaviour
                         break;
                 }
             });
+            Debug.Log(personality.nickname + " : " + impactValue.ToString());
             personality.satisfaction += Mathf.CeilToInt(impactValue);
             UpdateFeedbackEmojis(personality, impactValue);
         });
@@ -231,6 +233,16 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             int value = Mathf.FloorToInt((float)personalities[i].satisfaction * satisfactionIndicatorsSpawn.Count / settings.satisfactionLimit);
+
+            if (value < 0)
+            {
+                value = 0;
+            }
+            else if (value > satisfactionIndicatorsSpawn.Count - 1)
+            {
+                value = satisfactionIndicatorsSpawn.Count - 1;
+            }
+
             satisfactionIndicatorsSpawn[i].sprite = settings.satisfactionIndicators[value];
         }
     }
