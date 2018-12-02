@@ -20,11 +20,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64323522caff7664394693b13bab4655, type: 2}
   - {fileID: 11400000, guid: 8091dd8a043f0fb4a92df67acf754fdb, type: 2}
   satisfactionIndicators:
-  - {fileID: 21300000, guid: 994ca17942340004d9d564144dd49562, type: 3}
-  - {fileID: 21300002, guid: 994ca17942340004d9d564144dd49562, type: 3}
-  - {fileID: 21300004, guid: 994ca17942340004d9d564144dd49562, type: 3}
-  - {fileID: 21300006, guid: 994ca17942340004d9d564144dd49562, type: 3}
-  - {fileID: 21300008, guid: 994ca17942340004d9d564144dd49562, type: 3}
+  - {fileID: 21300000, guid: df7f7a6b2acb45140b11dd6ee010d523, type: 3}
+  - {fileID: 21300002, guid: df7f7a6b2acb45140b11dd6ee010d523, type: 3}
+  - {fileID: 21300004, guid: df7f7a6b2acb45140b11dd6ee010d523, type: 3}
+  - {fileID: 21300006, guid: df7f7a6b2acb45140b11dd6ee010d523, type: 3}
+  - {fileID: 21300008, guid: df7f7a6b2acb45140b11dd6ee010d523, type: 3}
   feedbackEmojis:
   - emoji: {fileID: 21300000, guid: 5785eec4b469cf24dbc7c4648fb69723, type: 3}
     value: -50

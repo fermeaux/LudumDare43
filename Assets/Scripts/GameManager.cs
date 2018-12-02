@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameSettings settings;
     [Header("References")]
+    public RectTransform boy;
     public Text questionText;
     public Image answerLeftImage;
     public Image answerRightImage;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
             answerLeftText.color = new Color(0, 0, 0, a);
             answerLeftImage.gameObject.SetActive(true);
             answerRightImage.gameObject.SetActive(false);
+            boy.localScale = new Vector3(1, 1, 1);
         }
         else
         {
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
             answerRightText.color = new Color(0, 0, 0, a);
             answerLeftImage.gameObject.SetActive(false);
             answerRightImage.gameObject.SetActive(true);
+            boy.localScale = new Vector3(-1, 1, 1);
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -238,7 +241,6 @@ public class GameManager : MonoBehaviour
         {
             if (impactValue < settings.feedbackEmojis[i].value || settings.feedbackEmojis.Count - 1 == i)
             {
-                Debug.Log(i);
                 feedbackEmojisSpawn[personalities.IndexOf(personality)].sprite = settings.feedbackEmojis[i].emoji;
                 return;
             }
