@@ -7,6 +7,7 @@ public class GameSettings : ScriptableObject
 {
     public List<Question> questions;
     public List<Personality> personalities;
+    public List<Sprite> satisfactionIndicators;
     public int satisfactionLimit = 100;
     public float satisfactionMultiplier = 1.5f;
 

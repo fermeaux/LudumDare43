@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameSettings settings;
-    public int satisfactionLimit = 100;
-    public float satisfactionMultiplier = 1.5f;
     [Header("References")]
     public Text questionText;
     public Image answerLeftImage;
@@ -15,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Text answerLeftText;
     public Text answerRightText;
     public List<Image> personalitiesSpawn;
+    public List<Image> satisfactionIndicators;
 
     private List<Question> questionsAvailable;
     private List<Personality> personalitiesAvailable;
@@ -111,13 +110,13 @@ public class GameManager : MonoBehaviour
             Personality tmp = PickPersonality();
             personalities.Add(tmp);
             personalitiesSpawn[i].sprite = tmp.visual;
-            // Instantiate(tmp.visual, personalitiesSpawn[i]);
         }
+        UpdateSatisfactionIndicators();
     }
 
     private bool CheckWin()
     {
-        return personalities.TrueForAll(personality => personality.satisfaction >= satisfactionLimit);
+        return personalities.TrueForAll(personality => personality.satisfaction >= settings.satisfactionLimit);
     }
 
     private bool CheckLoose()
@@ -169,6 +168,7 @@ public class GameManager : MonoBehaviour
             });
             personality.satisfaction += Mathf.CeilToInt(impactValue);
         });
+        UpdateSatisfactionIndicators();
     }
 
     private float GetImpactValue(int personalityValue, int impactValue)
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
         float result = personalityValue > 50 ? (impactValue - personalityValue) : (personalityValue < 50 ? (personalityValue - impactValue) : 0);
         if (result > 0)
         {
-            result *= satisfactionMultiplier;
+            result *= settings.satisfactionMultiplier;
         }
         return result;
     }
@@ -219,5 +219,14 @@ public class GameManager : MonoBehaviour
     {
         questionsAvailable.AddRange(seenQuestions);
         personalitiesAvailable.AddRange(seenPersonalities);
+    }
+
+    private void UpdateSatisfactionIndicators()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            int value = Mathf.FloorToInt((float)personalities[i].satisfaction * satisfactionIndicators.Count / settings.satisfactionLimit);
+            satisfactionIndicators[i].sprite = settings.satisfactionIndicators[value];
+        }
     }
 }

@@ -19,5 +19,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8d052e4599514143aa2c636a909286e, type: 2}
   - {fileID: 11400000, guid: 64323522caff7664394693b13bab4655, type: 2}
   - {fileID: 11400000, guid: 8091dd8a043f0fb4a92df67acf754fdb, type: 2}
+  satisfactionIndicators:
+  - {fileID: 21300000, guid: 994ca17942340004d9d564144dd49562, type: 3}
+  - {fileID: 21300002, guid: 994ca17942340004d9d564144dd49562, type: 3}
+  - {fileID: 21300004, guid: 994ca17942340004d9d564144dd49562, type: 3}
+  - {fileID: 21300006, guid: 994ca17942340004d9d564144dd49562, type: 3}
+  - {fileID: 21300008, guid: 994ca17942340004d9d564144dd49562, type: 3}
   satisfactionLimit: 100
   satisfactionMultiplier: 1.5
