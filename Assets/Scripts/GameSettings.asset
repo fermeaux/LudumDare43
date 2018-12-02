@@ -25,5 +25,30 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 994ca17942340004d9d564144dd49562, type: 3}
   - {fileID: 21300006, guid: 994ca17942340004d9d564144dd49562, type: 3}
   - {fileID: 21300008, guid: 994ca17942340004d9d564144dd49562, type: 3}
+  feedbackEmojis:
+  - emoji: {fileID: 21300000, guid: 5785eec4b469cf24dbc7c4648fb69723, type: 3}
+    value: -50
+  - emoji: {fileID: 21300000, guid: 485393164bfe4b7458c379e171a9248d, type: 3}
+    value: -40
+  - emoji: {fileID: 21300000, guid: 83c2497ff9ee98544ba30930fe2b887c, type: 3}
+    value: -30
+  - emoji: {fileID: 21300000, guid: 63b219f3a9262094b93c0fe36ad35889, type: 3}
+    value: -20
+  - emoji: {fileID: 21300000, guid: 4ee7f11962a51564a9abcb4bf3cd9487, type: 3}
+    value: -10
+  - emoji: {fileID: 21300000, guid: 578001d979ad9514d99a00ef831363fe, type: 3}
+    value: 0
+  - emoji: {fileID: 21300000, guid: 5140c36d2362e0646ba62602e8ab8620, type: 3}
+    value: 10
+  - emoji: {fileID: 21300000, guid: 15f295a0ba431ab4ebdcfa6471080ae5, type: 3}
+    value: 20
+  - emoji: {fileID: 21300000, guid: 63e2deb08e3ad424dad569deecf30737, type: 3}
+    value: 30
+  - emoji: {fileID: 21300000, guid: 2f2085c95bb684f4b8b86af8f0b29020, type: 3}
+    value: 40
+  - emoji: {fileID: 21300000, guid: 392bec087ca92ca44a8dddb53b9e99c8, type: 3}
+    value: 50
+  - emoji: {fileID: 21300000, guid: fc3605e5ea59e124db3228be46edc84e, type: 3}
+    value: 60
   satisfactionLimit: 100
   satisfactionMultiplier: 1.5

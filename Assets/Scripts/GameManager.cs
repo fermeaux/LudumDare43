@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public Text answerLeftText;
     public Text answerRightText;
     public List<Image> personalitiesSpawn;
-    public List<Image> satisfactionIndicators;
+    public List<Image> satisfactionIndicatorsSpawn;
+    public List<Image> feedbackEmojisSpawn;
 
     private List<Question> questionsAvailable;
     private List<Personality> personalitiesAvailable;
@@ -167,6 +168,7 @@ public class GameManager : MonoBehaviour
                 }
             });
             personality.satisfaction += Mathf.CeilToInt(impactValue);
+            UpdateFeedbackEmojis(personality, impactValue);
         });
         UpdateSatisfactionIndicators();
     }
@@ -225,8 +227,21 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            int value = Mathf.FloorToInt((float)personalities[i].satisfaction * satisfactionIndicators.Count / settings.satisfactionLimit);
-            satisfactionIndicators[i].sprite = settings.satisfactionIndicators[value];
+            int value = Mathf.FloorToInt((float)personalities[i].satisfaction * satisfactionIndicatorsSpawn.Count / settings.satisfactionLimit);
+            satisfactionIndicatorsSpawn[i].sprite = settings.satisfactionIndicators[value];
+        }
+    }
+
+    private void UpdateFeedbackEmojis(Personality personality, float impactValue)
+    {
+        for (int i = 0; i < settings.feedbackEmojis.Count; i++)
+        {
+            if (impactValue < settings.feedbackEmojis[i].value || settings.feedbackEmojis.Count - 1 == i)
+            {
+                Debug.Log(i);
+                feedbackEmojisSpawn[personalities.IndexOf(personality)].sprite = settings.feedbackEmojis[i].emoji;
+                return;
+            }
         }
     }
 }

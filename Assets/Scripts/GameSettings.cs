@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class FeedbackEmoji
+{
+    public Sprite emoji;
+    public int value;
+}
+
 [CreateAssetMenu(fileName = "GameSettings", menuName = "GameSettings")]
 public class GameSettings : ScriptableObject
 {
     public List<Question> questions;
     public List<Personality> personalities;
     public List<Sprite> satisfactionIndicators;
+    public List<FeedbackEmoji> feedbackEmojis;
     public int satisfactionLimit = 100;
     public float satisfactionMultiplier = 1.5f;
 
@@ -24,7 +32,6 @@ public class GameSettings : ScriptableObject
         Question tmp = questions[index];
         questions.RemoveAt(index);
         seenQuestions.Add(tmp);
-        Debug.Log(questions);
         return tmp;
     }
 
