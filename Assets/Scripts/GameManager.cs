@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
 
     private float GetImpactValue(int personalityValue, int impactValue)
     {
-        float result = personalityValue > 50 ? (impactValue - personalityValue) : (personalityValue < 50 ? (personalityValue - impactValue) : 0);
+        float result = (impactValue - 5) * (personalityValue - 5);
         if (result > 0)
         {
             result *= settings.satisfactionMultiplier;

@@ -17,8 +17,8 @@ public enum DeadlySin
 public class Impact
 {
     public DeadlySin deadlySin;
-    [Range(0, 100)]
-    public int value = 50;
+    [Range(0, 10)]
+    public int value = 5;
 }
 
 [System.Serializable]

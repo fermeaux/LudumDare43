@@ -9,18 +9,18 @@ public class Personality : ScriptableObject
     public int satisfaction = 50;
     public string nickname;
     public Sprite visual;
-    [Range(0, 100)]
-    public int lustChastity = 50;
-    [Range(0, 100)]
-    public int gluttonyTemperance = 50;
-    [Range(0, 100)]
-    public int greedCharity = 50;
-    [Range(0, 100)]
-    public int slothDiligence = 50;
-    [Range(0, 100)]
-    public int wrathPatience = 50;
-    [Range(0, 100)]
-    public int envyKindness = 50;
-    [Range(0, 100)]
-    public int prideHumility = 50;
+    [Range(0, 10)]
+    public int lustChastity = 5;
+    [Range(0, 10)]
+    public int gluttonyTemperance = 5;
+    [Range(0, 10)]
+    public int greedCharity = 5;
+    [Range(0, 10)]
+    public int slothDiligence = 5;
+    [Range(0, 10)]
+    public int wrathPatience = 5;
+    [Range(0, 10)]
+    public int envyKindness = 5;
+    [Range(0, 10)]
+    public int prideHumility = 5;
 }
